@@ -30,6 +30,7 @@ public class UserService {
         if(userRepository.findByUsername(requestDto.getUsername()).isEmpty()) {
             User newUser = userRepository.save(requestDto.toEntity());
             responseDto = User.toDto(newUser);
+            responseDto.setNameCheckMessage("등록 완료");
         } else {
             responseDto = new ResponseDto(requestDto.getUsername(),requestDto.getPassword());
             responseDto.setNameCheckMessage("해당 username은 이미 존재 합니다.");

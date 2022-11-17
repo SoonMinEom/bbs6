@@ -1,5 +1,6 @@
 package com.practice.bbs6.domain.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
