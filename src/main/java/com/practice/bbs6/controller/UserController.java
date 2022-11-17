@@ -1,5 +1,7 @@
 package com.practice.bbs6.controller;
 
+import com.practice.bbs6.domain.dto.ResponseDto;
+import com.practice.bbs6.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,8 +19,8 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResponseDto> getUser(@PathVariable Integer id) {
+    public ResponseEntity<ResponseDto> getUser(@PathVariable Long id) {
         ResponseDto responseDto = userService.get(id);
-        return null;
+        return ResponseEntity.ok().body(responseDto);
     }
 }
