@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class ResponseDto {
-    private Long id;
+    private String nameCheckMessage;
     private String username;
     private String password;
 
